@@ -16,6 +16,3 @@ Python · PySpark (Spark SQL, Spark MLlib) · scikit-learn (metrics) · Pandas, 
 - **`Cloud_Infrastructure_Analysis.ipynb`**: The full pipeline, all outputs embedded.
 - **`HR_Employee_Data.txt`**: 10,000 × 14 HR dataset (CSV, no personal identifiers).
 - **`Project_Presentation.pdf`**: 32-slide presentation (Hebrew).
-
----
-*Final Project — Management & Engineering of Cloud Big Data Infrastructure, M.Sc. Data Science, HIT.*
