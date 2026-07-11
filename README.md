@@ -1,23 +1,21 @@
-# Management and Engineering of Cloud Data Infrastructure - Final Project
+# Cloud Big Data Infrastructure — Final Project: HR Analytics with PySpark
 
-**Final Project (M.Sc. Data Science, HIT). HR Analytics using PySpark & Scikit-learn: Implementing Random Forest (Supervised) and K-Means (Unsupervised) models for workforce optimization and predictive performance analysis on distributed cloud architecture.**
-
-## Overview
-This project analyzes a large-scale HR dataset to demonstrate big data engineering principles such as distributed computing, in-memory processing, and scalable machine learning within a cloud-based architecture.
+## Project Overview
+An end-to-end big-data pipeline built entirely in PySpark on a 10,000-record × 14-feature HR dataset — EDA, rule-based cleaning, three-method missing-value imputation, K-Means segmentation, and a constraint-aware workforce-decision engine, demonstrating Spark's distributed processing model (`local[*]`).
 
 ## Key Features
-- **Scalable ETL:** Distributed data cleaning and transformation using PySpark.
-- **Advanced Analytics:** - **Supervised Learning:** Implementation of **Random Forest** for performance classification.
-  - **Unsupervised Learning:** Implementation of **K-Means** for employee clustering and pattern recognition.
-- **Decision Support:** Data-driven insights for workforce optimization, promotions, and retention.
+- **Spark ETL & Data Quality:** Logical-consistency rules, 3σ outlier removal, and label encoding; 22.09% of rows (2,209 of 10,000) arrived with missing values.
+- **Three-Method Imputation (Spark MLlib):** Correlation-driven hierarchical mode fill (Work_Mode: 247 → 0 nulls); Gradient-Boosted Trees for salary regression (R² = 0.986), selected over Decision Tree, Random Forest, and Linear Regression; Logistic Regression for department classification — with a documented fallback where no model was accurate enough.
+- **Unsupervised Segmentation:** K-Means (Elbow → K = 3, Silhouette), mapping the workforce to three distinct personas.
+- **Decision-Support Engine:** Weighted scoring flagging a 15% workforce-reduction cohort (threshold 5.85) under a hard department-distribution constraint — logic designed with LLM assistance, implemented as deterministic PySpark rules.
 
 ## Tech Stack
-- **Engine:** Apache Spark (PySpark)
-- **ML Libraries:** Scikit-learn, Spark MLlib
-- **Data Handling:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
+Python · PySpark (Spark SQL, Spark MLlib) · scikit-learn (metrics) · Pandas, NumPy · Matplotlib, Seaborn
 
-## Repository Structure
-- `Cloud_Infrastructure_Analysis.ipynb`: Full analysis, modeling (Random Forest & K-Means), and visualization code.
-- `Project_Presentation.pdf`: Project presentation and architectural overview.
-- `HR_Employee_Data.txt`: Source data used for the analysis.
+## Repository Content
+- **`Cloud_Infrastructure_Analysis.ipynb`**: The full pipeline, all outputs embedded.
+- **`HR_Employee_Data.txt`**: 10,000 × 14 HR dataset (CSV, no personal identifiers).
+- **`Project_Presentation.pdf`**: 32-slide presentation (Hebrew).
+
+---
+*Final Project — Management & Engineering of Cloud Big Data Infrastructure, M.Sc. Data Science, HIT.*
